@@ -1,0 +1,85 @@
+:root {
+    --light-bg: #FFFAE8;
+    --blue: #4A7D85;
+    --green: #4A573E;
+    --red: #822D12;
+    --light-text: #F2EDE6;
+  }
+  body {
+    font-family: 'Playfair Display', sans-serif;
+    color: #000;
+    width: 100vr;
+    padding: 0;
+    margin: 0;
+  }
+  /*sa*/
+  header {
+    top: 0;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  
+  .site-logo-bar {
+    display: block;
+    background-color: white;
+  }
+  
+  .bar-columns {
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+  }
+  
+  .site-logo {
+    align-self: center;
+    display: block;
+    justify-self: center;
+    width: 200px;
+  }
+  
+  .login-bar {
+    align-self: center;
+    justify-self: center;
+  }
+  
+  .login-bar a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .login-bar a:hover {
+    color: var(--blue);
+  }
+  
+  .user-icon {
+    width: 20px;
+  }
+  
+  .menu {
+    background: var(--light-bg);
+    height: 60px;
+    list-style-type: none;
+    text-align: center;
+    font-size: 17px;
+    text-shadow: 0.5px 0.5px 0.5px var(--green);
+  }
+  
+  .menu li {
+    display: inline-block;
+    width: 10%;
+    height: 40px;
+    line-height: 10px;
+    margin-left: -5px;
+    padding: 20px 0 0 0;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: var(--green);
+    display: block;
+  }
+  
+  .menu a:hover {
+    color: var(--blue);
+  }
+  /*sa end*/

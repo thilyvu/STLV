@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=utf-8 />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title> STLV </title>
+</head>
+
+<body>  
+  <div class="mainbody">
+  
+    <div class="section_left">
+      <ul class="filter">
+        <li class="filter-item"><span>Filter by</span> </li>
+        <li class="filter-item">
+          <details class="detail">
+            <summary>Collection</summary>
+            <ul>
+              <li><a href="#">All</a></li>  
+              <li><a href="#">spring</a></li>
+              <li><a href="#">summer</a></li>
+              <li><a href="#">winter</a></li>
+            </ul>
+          </details>
+        </li>
+
+        </li>
+        <li class="filter-item">
+          <details class="color">
+            <summary>Color</summary>
+            <ul>
+              <li><button class="btn" style="background-color: aqua;"></button></li>
+              <li><button class="btn" style="background-color: black;"></button></li>
+              <li><button class="btn" style="background-color: blue;"></button></li>
+              <li><button class="btn" style="background-color: darkred;"></button></li>
+              <li><button class="btn" style="background-color: darkslategray;"></button></li>
+              <li><button class="btn" style="background-color: ghostwhite;"></button></li>
+              <li><button class="btn" style="background-color: gold;"></button></li>
+              <li><button class="btn" style="background-color: greenyellow;"></button></li>
+            </ul>
+          </details>
+        </li>
+
+        <li class="filter-item">
+          <details class="detail">
+            <summary>On Sale</summary>
+            <ul>
+              <li><a href="#">5%</a></li>
+              <li><a href="#">10%</a></li>
+              <li><a href="#">15%</a></li>
+              <li><a href="#">20%</a></li>
+              <li><a href="#">25%</a></li>
+            </ul>
+          </details>
+        </li>
+
+        <li class="filter-item">
+          <details class="detail">
+            <summary>Size</summary>
+            <ul>
+              <li>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="">
+                    <a href="#">S</a>
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="">
+                    <a href="#">M</a>
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="">
+                    <a href="#">X</a>
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="">
+                    <a href="#">XL</a>
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="">
+                    <a href="#">XXL</a>
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </details>
+        </li>
+
+        <li class="filter-item">
+          <details class="detail">
+            <summary>Price</summary>
+            <ul>
+              <li><a href="#">Low to high &#8593;</a></li>
+              <li><a href="#">High to low &#8595;</a></li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+
+    </div>
+
+    <div class="left_body">
+      <div class="products">
+        <img src="https://img.onl/wMPNzb" onclick="openModal();currentSlide(1)" class="pictures">
+        <br>
+        <br>
+        <table style="width: 100%;">
+          <tr>
+            <td style="width: 20%;"><label style="text-align: left;"> Price : $50.00 </label></td>
+            <td style="width: 20%; text-align: right;"><a href="#"><i class="fa fa-shopping-cart"></i></a></td>
+          </tr>
+
+        </table>
+        <div>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+        </div>
+        <br>
+      </div>
+      <div class="products">
+        <img src="https://img.onl/6JzqKK" onclick="openModal();currentSlide(2)" class="pictures">
+        <br>
+        <br>
+        <table style="width: 100%;">
+          <tr>
+            <td style="width: 20%;"><label style="text-align: left;"> Price : $50.00 </label></td>
+            <td style="width: 20%; text-align: right;"><a href="#"><i class="fa fa-shopping-cart"></i></a></td>
+          </tr>
+
+        </table>
+
+        <div>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+        </div>
+        <br>
+      </div>
+      <div class="products">
+        <img src="https://img.onl/sYtUlw" onclick="openModal() ;currentSlide(3)" class="pictures">
+        <br>
+        <br>
+        <table style="width: 100%;">
+          <tr>
+            <td style="width: 20%;"><label style="text-align: left;"> Price : $50.00 </label></td>
+            <td style="width: 20%; text-align: right;"><a href="#"><i class="fa fa-shopping-cart"></i></a></td>
+          </tr>
+
+        </table>
+        <div>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+        </div>
+
+
+        <br>
+      </div>
+      <div class="products">
+        <img src="https://img.onl/zWkg5N" onclick="openModal();currentSlide(4)" class="pictures">
+        <br>
+        <br>
+        <table style="width: 100%;">
+          <tr>
+            <td style="width: 20%;"><label style="text-align: left;"> Price : $50.00 </label></td>
+            <td style="width: 20%; text-align: right;"><a href="#"><i class="fa fa-shopping-cart"></i></a></td>
+          </tr>
+
+        </table>
+
+        <div>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+        </div>
+
+        <br>
+      </div>
+      <div class="products">
+        <img src="https://img.onl/zNzD0M" onclick="openModal();currentSlide(5)" class="pictures">
+        <br>
+        <br>
+        <table style="width: 100%;">
+          <tr>
+            <td style="width: 20%;"><label style="text-align: left;"> Price : $50.00 </label></td>
+            <td style="width: 20%; text-align: right;"><a href="#"><i class="fa fa-shopping-cart"></i></a></td>
+          </tr>
+
+        </table>
+        <div>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+        </div>
+
+        <br>
+      </div>
+      <div class="products">
+        <img src="https://img.onl/tJOoVz" onclick="openModal();currentSlide(6)" class="pictures">
+        <br>
+        <br>
+        <table style="width: 100%;">
+          <tr>
+            <td style="width: 20%;"><label style="text-align: left;"> Price : $50.00 </label></td>
+            <td style="width: 20%; text-align: right;"><a href="#"><i class="fa fa-shopping-cart"></i></a></td>
+          </tr>
+        </table>
+        <div>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+        </div>
+
+        <br>
+      </div>
+      <div class="products">
+        <img src="https://img.onl/q1Ru1E" onclick="openModal();currentSlide(7)" class="pictures">
+        <br>
+        <br>
+        <table style="width: 100%;">
+          <tr>
+            <td style="width: 20%;"><label style="text-align: left;"> Price : $50.00 </label></td>
+            <td style="width: 20%; text-align: right;"><a href="#"><i class="fa fa-shopping-cart"></i></a></td>
+          </tr>
+        </table>
+
+        <div>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+        </div>
+        <br>
+      </div>
+      <div class="products">
+        <img src="https://img.onl/uihLE" onclick="openModal();currentSlide(8)" class="pictures">
+        <br>
+        <br>
+        <table style="width: 100%;">
+          <tr>
+            <td style="width: 20%;"><label style="text-align: left;"> Price : $50.00 </label></td>
+            <td style="width: 20%; text-align: right;"><a href="#"><i class="fa fa-shopping-cart"></i></a></td>
+          </tr>
+        </table>
+        <div>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+        </div>
+        <br>
+      </div>
+    </div>
+
+<script>  var a;</script>
+
+    <div class="right_body">
+      <div class="products">
+        <img src="https://img.onl/62Ropy" onclick="openModal();currentSlide(9)" class="pictures">
+        <br>
+        <br>
+        <table style="width: 100%;">
+          <tr>
+            <td style="width: 20%;"><label style="text-align: left;"> Price : $50.00 </label></td>
+            <td style="width: 20%; text-align: right;"><a href="#"><i class="fa fa-shopping-cart"></i></a></td>
+          </tr>
+
+        </table>
+        <div>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+        </div>
+        <br>
+      </div>
+      <div class="products">
+        <img src="https://img.onl/Sp22eA" onclick="openModal();currentSlide(10)" class="pictures">
+        <br>
+        <br>
+        <table style="width: 100%;">
+          <tr>
+            <td style="width: 20%;"><label style="text-align: left;"> Price : $50.00 </label></td>
+            <td style="width: 20%; text-align: right;"><a href="#"><i class="fa fa-shopping-cart"></i></a></td>
+          </tr>
+
+        </table>
+
+        <div>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+        </div>
+
+        <br>
+      </div>
+      <div class="products">
+        <img src="https://img.onl/jpTYT5" onclick="openModal();currentSlide(11)" class="pictures">
+        <br>
+        <br>
+        <table style="width: 100%;">
+          <tr>
+            <td style="width: 20%;"><label style="text-align: left;"> Price : $50.00 </label></td>
+            <td style="width: 20%; text-align: right;"><a href="#"><i class="fa fa-shopping-cart"></i></a></td>
+          </tr>
+
+        </table>
+
+        <div>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+        </div>
+
+        <br>
+      </div>
+      <div class="products">
+        <img src="https://img.onl/bJBwSo" onclick="openModal();currentSlide(12)" class="pictures">
+        <br>
+        <br>
+        <table style="width: 100%;">
+          <tr>
+            <td style="width: 20%;"><label style="text-align: left;"> Price : $50.00 </label></td>
+            <td style="width: 20%; text-align: right;"><a href="#"><i class="fa fa-shopping-cart"></i></a></td>
+          </tr>
+
+        </table>
+        <div>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star "></span>
+        </div>
+
+        <br>
+      </div>
+      <div class="products">
+        <img src="https://img.onl/7QJ9Ti" onclick="openModal();currentSlide(13)" class="pictures">
+        <br>
+        <br>
+        <table style="width: 100%;">
+          <tr>
+            <td style="width: 20%;"><label style="text-align: left;"> Price : $50.00 </label></td>
+            <td style="width: 20%; text-align: right;"><a href="#"><i class="fa fa-shopping-cart"></i></a></td>
+          </tr>
+
+        </table>
+
+        <div>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+        </div>
+        <br>
+      </div>
+      <div class="products">
+        <img src="https://img.onl/pz1ghS" onclick="openModal();currentSlide(14)" class="pictures">
+        <br>
+        <br>
+        <table style="width: 100%;">
+          <tr>
+            <td style="width: 20%;"><label style="text-align: left;"> Price : $50.00 </label></td>
+            <td style="width: 20%; text-align: right;"><a href="#"><i class="fa fa-shopping-cart"></i></a></td>
+          </tr>
+
+        </table>
+
+        <div>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+        </div>
+
+        <br>
+      </div>
+      <div class="products">
+        <img src="https://img.onl/w3SAF9" onclick="openModal();currentSlide(15)"" class=" pictures">
+        <br>
+        <br>
+        <table style="width: 100%;">
+          <tr>
+            <td style="width: 20%;"><label style="text-align: left;"> Price : $50.00 </label></td>
+            <td style="width: 20%; text-align: right;"><a href="#"><i class="fa fa-shopping-cart"></i></a></td>
+          </tr>
+
+        </table>
+
+        <div>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+        </div>
+
+        <br>
+      </div>
+      <div class="products">
+        <img src="https://img.onl/mEXOfm" onclick="openModal();currentSlide(16)" class="pictures">
+        <br>
+        <br>
+        <table style="width: 100%;">
+          <tr>
+            <td style="width: 20%;"><label style="text-align: left;"> Price : $50.00 </label></td>
+            <td style="width: 20%; text-align: right;"><a href="#"><i class="fa fa-shopping-cart"></i></a></td>
+          </tr>
+
+        </table>
+        <div>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star star_checked"></span>
+          <span class="fa fa-star "></span>
+        </div>
+
+        <br>
+      </div>
+    </div>
+  </div>
+
+  <!--modal-->
+  <div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+      <!-- left +right-->
+      <div class="mySlides">
+        <div style="display: flex; height: fit-content;" >
+        <div style="width:55%; height: 100%; ">
+          <img src="https://img.onl/wMPNzb" style="height: 100%; " >
+          <p style="max-width: 100%;">I'm a product description. This is a great place to "sell" your product and grab buyers' attention.
+            Describe your product clearly and concisely. Use unique keywords. Write your own description instead
+            of using manufacturers' copy.</p>
+        </div>
+          <section style="padding-left: 5%; width: 45%;">
+            <div>
+              <label style="font-size: 3em; width: 100%;">I'm a Product</label>
+            </div>
+            <label style="text-align: left;"> Price : $50.00 </label>
+            </table>
+            <br>
+            <label>
+              Rating
+            </label>
+            <div id="stars">
+              <span class="fa fa-star star_checked"></span>
+              <span class="fa fa-star star_checked"></span>
+              <span class="fa fa-star star_checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </div>
+            <lable>Size</lable>
+            <br>
+            <div id="size">
+              <select name="dropdown" style="width: 60%; 
+               border-width: 0.01rem;
+               height: 2.5em;
+               border-color: darkgray;  ">
+                <option>XS</option>
+                <option selected>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+                <option>XXL</option>
+              </select>
+            </div>
+            <br>
+            <label> Quantity</label>
+            <div id="quantity">
+              <div><input type="number" pattern="[0-9]*" max="99999" min="1" value="2" style="height: 3em;width: 60%;">
+                <div><span></span><span></span></div>
+              </div>
+            </div>
+            <br>
+            <div class="btnadd">
+              <button style="text-align: center; width: 60%; height: 3em; color: white;
+              background-color: cadetblue; 
+              border: darkgray;">Add to Cart</button>
+              <br>
+              <br>
+              <button style="text-align: center;  width: 60%; height: 3em;     color: white;
+              background-color: darkseagreen;
+              border: darkgray;">Buy Now</button>
+            </div>
+
+            <br>
+            <!--policy-->
+            <div class="policy" style="width: 90%;" >
+            <details class="detail" open>
+              <summary style="padding-bottom: 1em; border-bottom: black;     padding-bottom: 2em;
+              border: transparent;
+              border-bottom: black;
+              border-width: 0.01em;
+              border-style: solid;">Collection</summary>
+             
+                  <p style="max-width: 100%;">I'm a product description. This is a great place to "sell" your product and grab buyers' attention.
+                    Describe your product clearly and concisely. Use unique keywords. Write your own description instead
+                    of using manufacturers' copy.</p>
+               
+                 
+
+            </details>
+            <details class="detail" >
+              <summary style="padding-bottom: 1em; border-bottom: black;  padding-bottom: 2em;
+              border: transparent;
+              border-bottom: black;
+              border-width: 0.01em;
+              border-style: solid;" >Return & Refund policy</summary>
+
+                  <p style="max-width: 100%;">I’m a Return and Refund policy. I’m a great place to let your customers know what to do in case
+                    they are dissatisfied with their purchase. Having a straightforward refund or exchange policy is a
+                    great way to build trust and reassure your customers that they can buy with confidence.</p>
+                
+
+            </details>
+            <details class="detail" >
+              <summary style="padding-bottom: 1em; border-bottom: black;     padding-bottom: 2em;
+              border: transparent;
+              border-bottom: black;
+              border-width: 0.01em;
+              border-style: solid;">Shipping Info</summary>        
+                  <p style="max-width: 100%;">I'm a shipping policy. I'm a great place to add more information about your shipping methods,
+                    packaging and cost. Providing straightforward information about your shipping policy is a great way
+                    to build trust and reassure your customers that they can buy from you with confidence.</p>
+            </details>
+          </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="mySlides">
+        <img src="https://img.onl/6JzqKK" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <img src="https://img.onl/sYtUlw" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <img src="https://img.onl/zWkg5N" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <img src="https://img.onl/zNzD0M" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <img src="https://img.onl/tJOoVz" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <img src="https://img.onl/q1Ru1E" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <img src="https://img.onl/uihLE" style="width:100%">
+      </div>
+
+
+
+      <div class="mySlides">
+        <img src="https://img.onl/62Ropy" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <img src="https://img.onl/Sp22eA" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <img src="https://img.onl/jpTYT5" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <img src="https://img.onl/bJBwSo" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <img src="https://img.onl/7QJ9Ti" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <img src="https://img.onl/pz1ghS" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <img src="https://img.onl/w3SAF9" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <img src="https://img.onl/mEXOfm" style="width:100%">
+      </div>
+      <!-- Next/previous controls -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+      <!-- Caption text -->
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+
+      <!-- Thumbnail image controls -->
+
+    </div>
+  </div>
+
+  <script>
+    // Open the Modal
+    function openModal() {
+      document.getElementById("myModal").style.display = "block";
+    }
+
+    // Close the Modal
+    function closeModal() {
+      document.getElementById("myModal").style.display = "none";
+    }
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      var captionText = document.getElementById("caption");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      captionText.innerHTML = dots[slideIndex - 1].alt;
+    }
+  </script>
+</body>
+
+</html>
