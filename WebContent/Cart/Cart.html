@@ -1,136 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="stylePayment.css" rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Alegreya&family=Playfair+Display&family=Rozha+One&display=swap"
-      rel="stylesheet"
-    />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styleCart.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Playfair+Display&family=Rozha+One&display=swap" rel="stylesheet">
 
     <title>Document</title>
-  </head>
 
-  <body onload="loadCartProduct(CartProducts);">
+</head>
 
+<body onload="loadproduct(listofproduct);">
+
+    <!-- Java Scrip -->
     <script>
-        var CartProducts={
-            imagesrc:['https://scontent.fsgn2-1.fna.fbcdn.net/v/t1.0-9/125256595_2915257018798541_531258921317813496_o.jpg?_nc_cat=105&ccb=2&_nc_sid=730e14&_nc_ohc=QasoEwPX3IgAX890tM-&_nc_ht=scontent.fsgn2-1.fna&oh=8914db77c9f54c95c00f72e7d23356d4&oe=5FD9E88E',
-   'https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.0-9/125799245_2915257035465206_2869890621293014093_o.jpg?_nc_cat=104&ccb=2&_nc_sid=730e14&_nc_ohc=wAkgEcTjI8IAX947PYS&_nc_ht=scontent.fsgn2-5.fna&oh=4cf09601779223592937a0a533e9d868&oe=5FD92FB8',
-   'https://scontent.fsgn2-6.fna.fbcdn.net/v/t1.0-9/125405785_2915257082131868_2197928885692539192_o.jpg?_nc_cat=100&ccb=2&_nc_sid=730e14&_nc_ohc=8Ij65gFPxs8AX9MWMcg&_nc_ht=scontent.fsgn2-6.fna&oh=6a57422f15cf63508213407f4e246520&oe=5FD8E1F1'],
-
-            name:['áo màu vàng','áo màu xanh', 'áo màu đỏ' ],
-            size:['S','X','L'],
-            quantity:[1,2,3],
-            price:[20000,30000,40000]
-        }
-        
-        class CartProduct{
-                constructor(imagesrc,name,size,quantity,price){
-                    this.imagesrc=imagesrc;
-                    this.name=name;
-                    this.size=size;
-                    this.quantity=quantity;
-                    this.price=price;
-                };
+                                     
+        function plus(e){    
+            e.parentElement.children[1].value= ++e.parentElement.children[1].value; }
+        function minus(e){
+        if(e.parentElement.children[1].value>1){
+            e.parentElement.children[1].value= --e.parentElement.children[1].value; }
             }
-            var listOfCartProducts=[];
-            function loadCartProduct(CartProducts){
-            var n= CartProducts.imagesrc.length;
-            var i;
-            for (i=0;i<n;i++)
-            {
-                var productItem= new CartProduct(CartProducts.imagesrc[i],CartProducts.name[i],CartProducts.size[i],CartProducts.quantity[i],CartProducts.price[i]);
-
-                listOfCartProducts.push(productItem);
-            } 
-            createCartProduct(listOfCartProducts);
-            }
-           
-            function createCartProduct(listOfCartProducts){
-                var i;
-                var n=listOfCartProducts.length;
-                for (i=0;i<n;i++)
-                { 
-
-                    var div2=document.createElement("div");
-                    div2.setAttribute("class","pay-product product-selected");
-                    div2.setAttribute("style","display:flex;width:100%;border: lavender;border-width: 0.01em;border-style: double;")
-
-                    var div3=document.createElement("div");
-                    div3.setAttribute("class","pay-item-image");
-                    div3.setAttribute("style","width:20%")
-                    //  div3.setAttribute("style","padding-left:5%")
-                    div2.appendChild(div3);
-
-                    var image1=document.createElement("img");
-                    image1.setAttribute("class","image-item");
-                    image1.setAttribute("style","margin-left: 45%;")
-                    image1.setAttribute("src",String(listOfCartProducts[i].imagesrc));
-
-                    div3.appendChild(image1);
-
-
-                    var div4=document.createElement("div");
-                    div4.setAttribute("style","width:20%")
-
-                    div2.appendChild(div4);
-
-                    var lable1= document.createElement("lable");
-                    var lable1dis=document.createTextNode(String(listOfCartProducts[i].name));
-                    lable1.appendChild(lable1dis);
-
-                    div4.appendChild(lable1);
-                    div2.appendChild(div4);
-
-
-                    var div5=document.createElement("div");
-                    var span1= document.createElement("span");
-                    div5.setAttribute("style","width:15%");
-                    var span1dis=document.createTextNode("Size "+ String(listOfCartProducts[i].size));
-                    span1.appendChild(span1dis);
-
-                    div5.appendChild(span1);
-                    div2.appendChild(div5);
-
-                    var div6=document.createElement("div");
-                    div6.setAttribute("style","width:18%");
-                    var span2= document.createElement("span");
-                    var span2dis=document.createTextNode(String(listOfCartProducts[i].price));
-                    span2.appendChild(span2dis);
-
-                    div6.appendChild(span2);
-                    div2.appendChild(div6);
-
-                    var div7=document.createElement("div");
-                    div7.setAttribute("style","width:15%");
-                    var span3= document.createElement("span");
-                    var span3dis=document.createTextNode(String(listOfCartProducts[i].quantity));
-                    span3.appendChild(span3dis);
-
-                    div7.appendChild(span3);
-                    div2.appendChild(div7);
-                    
-                    var div8=document.createElement("div");
-                    div8.setAttribute("style","width:20%");
-                    var span4= document.createElement("span");
-                    var span4dis=document.createTextNode(String(listOfCartProducts[i].price));
-                    span4.appendChild(span4dis);
-
-                    div8.appendChild(span4);
-                    div2.appendChild(div8);
-
-                    var parent=document.getElementById("items");
-                    parent.appendChild(div2);
-                }
-            }
+      
+        function hidenItem(e){
+            e.parentElement.parentElement.style.display="none"; }
     </script>
-    <!-- Sa Header- Start-->
+    <!-- Java Scrip-->
     <header>
         <div class="menu-bar">
         <div class="menu">
@@ -145,7 +42,7 @@
           <div class="space"></div>
           <div class="login"><a href="../login/login1.html">Đăng nhập</a></div>
         <div class="cart">
-          <a href="../Cart/Cart.html">
+          <a href="">
           <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 446.853 446.853" style="enable-background:new 0 0 446.853 446.853;"
            xml:space="preserve">
       <g>
@@ -167,195 +64,437 @@
         </div>
       </div>
       </header>
-    <!-- Sa Header- End-->
-    
-    <!-- Thảo change information Start-->
-    <div class="pay-change-info">   
-        <div class="container-location">
-            <div id='pop-close' class="pop-close">+</div>
-            <label class="pop-lb"> Change your infomation shipping</label>
-           <form action="">
-               <input type="text" id='pop-UserName' class="pop-info pop-user" placeholder="Người nhận">
-               <input type="text" id='pop-Phone' class="pop-info pop-phone" placeholder="Số điện thoại">
-               <input type="text" id='pop-Address' class="pop-info pop-locate" placeholder="Địa chỉ nhận hàng">
-               <input type="button" id='pop-submit-btn' class="pop-submit-btn" value="Submit">
-           </form>
-        </div>
-    </div>  
-      <!-- Thảo change information End-->
-    <div class="pay-main">
-        <div class="border-envelop"></div>
-         <div class="pay-header-user-location"> 
-        <div class="pay-info">
-            <div id='info-UserName' class="pay-info-item i-name-phone"> <span id='info-Name'
-                
-                 class="pay-header-user-name">Thảo Lê</span>
-            <span id='info-Phone' class="pay-header-user-phone">+0333875398</span></div>
-            <div  class="pay-info-item i-phone"> <span id='info-Address' >1424/3 Ấp CHợ , xã An Nhơn Tây, huyện Củ Chi, TP Hồ Chí Minh</span></div>
-            <div class="pay-info-item i-change">
-                <span class="pay-change-selected" id="pay-change-selected"  >
-                    Thay đổi</span>
-            </div>
-        </div>
-      
-        
-    <script>
-        // Thao function change information user
-        document.getElementById('pay-change-selected').addEventListener('click', function(){
-           
-            
-               document.querySelector('.pay-change-info').style.display='flex';
-               document.getElementById('pop-UserName').value=  document.getElementById('info-Name').innerHTML;
-               document.getElementById('pop-Phone').value=  document.getElementById('info-Phone').innerHTML;
-               document.getElementById('pop-Address').value=  document.getElementById('info-Address').innerHTML;
 
-        
-               // alert(document.querySelection('.pay-change-info').name);
-           });
-          
-       document.getElementById('pop-close').addEventListener('click', function(){
-           document.querySelector('.pay-change-info').style.display='none';
-       });
-   
-       document.getElementById('pop-submit-btn').addEventListener('click',function(){
-            document.getElementById('info-Name').innerHTML= document.getElementById('pop-UserName').value;
-            document.getElementById('info-Phone').innerHTML= document.getElementById('pop-Phone').value;
-            document.getElementById('info-Address').innerHTML= document.getElementById('pop-Address').value;
-            document.querySelector('.pay-change-info').style.display='none';
-       });
-
-       //Change Delivery
-       </script>
-
-
-        <div class="pay-container" >
-            <div class="pay-header-selection header-res" style="display: flex;border: black;
-            border-width: 0.05em;
-            border-style: groove;">
-                <div style="width: 14%;padding-left: 9%;"><b> Sản phẩm </b></div>
-                <div style="width: 21%;"><b> Tên sản phẩm </b></div>
-                <div style="width: 14%;" ><b> Size</b></div>
-                <div style="width: 15%;"><b> Đơn giá</b></div>
-                <div style="width: 15%;"><b> Số lượng</b></div>
-                <div style="width: 21%;"><b> Thành tiền</b></div>
-            </div>
-
-            <!-- item-->
-            <div class="pay-header-selection" id="items" >
-                <!-- <div class="pay-product product-selected">
-                    <div class="pay-item-image">
-                        <img class="image-item" src="https://i.postimg.cc/TwY8KjKh/joshua-rondeau-r-AIo-Qyg-EGyw-unsplash-2.jpg">
-                    </div>
-                    <div class="pay-item-info-name">
-                        <lable>Váy chuông tay bòng</lable>
-                    </div>
-                    <div class="pay-item-info-type"> 
-                        <span class="pay-item-span-type"> </span></div>
-                </div>
-
-                <div class="pay-price"><span>27, 000</span></div>
-                <div class="pay-quantity"><span>1</span></div>
-                <div class="pay-total-price">27, 000</div> -->
-            </div>
-        
-
-
-
-
-            <div class="pay-submit" >
-                <div class="pay-item-voucher" >
-                        <div class="pay-notice-voucher">Using your voucher </div>
-                        <!-- <div class="pay-choosing-voucher" > -->
-                            <a class="pay-item-btn-change-boucher">   Chọn voucher</a>
-                        <!-- </div> -->
-                </div>
-                <div class="pay-item-footer">
-                    <div class="pay-item-footer-transport" style="display: flex;" >
-                  
-                        <div class=" pay-footer-noting">
  
-                            <div class="pay-footer-noting-lb" >Lời nhắn</div>
-                            <div class="pay-footer-noting" >     <input class="pay-footer-noting-txt" placeholder="Lưu ý cho người bán"></div>     
-                        </div>
-                    
-                        <div class=" pay-footer-shipping" >
-                                <div class="pay-shipping_unit-transport">Đơn vị vận chuyển: </div>
-                
-                            <div class="pay-shipping-info"> <b> Giao hàng tiết kiệm  </b>
-                                <select id="typeOfTransport" style="width: 100%;height: 40%;">
-                                    <option ><p>Nhận hàng vào các ngày trong tuần(Kể cả buổi tối) </p> </option>
-                                    <option selected ><p>Nhận hàng vào giờ hành chính </p> </option>
-                                  </select>
-                            </div>
-  
-                        </div>
-                        <div div="pay-shipping-change-delivery">
-                        <div class="pay-shipping-change-transporter"> <span class="pay-totalprice-label"> <a class="pay-change-selected" href="http://google.com">Phí Ship  : </a>  </span>  
-                        <span class="pay-total-price-payment">  17, 000 </span> </div>
-                         </div>
-
-                         
-                        </div>
-                        <div div="pay-shipping-change-delivery">
-                        <div class="pay-shipping-change-transporter"> <div class="pay-label"> Tổng số tiền thanh toán  </div>  
-                        <div class="pay-label">23, 000 </div> 
-                        <input type="button" value="Thanh toán" class="pay-submit-btn"></div> 
+    <!-- Thảo Cart Pay-->
+    <div class="cart-main">
+        <div class="cart-main-comntainer">
+            <div class="cart-header">
+                <h3 class="cart-header-name">My cart</h3>
+            </div>
+            <div class="cart-container__selection" id="items">
+<!-- Item-->
+                <!-- <div class="cart-item">
+                    <div class="cart-item__checkbox">
+                        <div class="cart-midle-align">
+                            <input class="cart-item__checkbox-implement" type="checkbox"></div>
                     </div>
-                        
-                         <div class="div-payment">
-                           </div>
-                <div>
-                    
+
+                    <div class="cart-item__image">
+                        <a href="http://google.com"></a>
+                        <img class="cart-item__image-description" alt="img_product" src="https://i.postimg.cc/TwY8KjKh/joshua-rondeau-r-AIo-Qyg-EGyw-unsplash-2.jpg">
+                    </div>
+
+
+                    <div class="cart-item__product-info">
+                        <h3 class="cart-item__product-name">Váy dài công sở</h3>
+
+                        <div class="cart-item__product-detail">
+                            <div class="cart-item__product  span-size-s"> 
+                                
+                                <span class="cart-item__product-name">Size S</span> 
+                            </div>
+
+                            <div class="cart-item__product"> <span class="cart-item__product-name">270,000</span> </div>
+
+
+                            <div class="cart-item__product">
+                                <div class="cart-item__quantity-drop-down">
+                                    <input type="button" value="-" class="cart-item__quantity-btn"  onClick="minus(this)">  
+
+                                    <input class="cart-item__quantity-text "  type="text" value="1">
+
+                                    <input value="+" type="button" class="cart-item__quantity-btn" onClick="plus(this)" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="cart-item__total-price">
+                        <span class="cart-item__total-price-name">27,000 </span></div>
+
+
+                    <div class="cart-item-cancel">
+                        <input type="button"  onClick="hidenItem(this)"  width="14" height="14" aria-label="remove I'm a Product from the cart" class="cart-btn-cancel" value=" &#x2715">
+                   
+                    </div>
+                </div> -->
+
+
+<!-- Item-->
+              <!-- Item-->
+              <!-- <div class="cart-item">
+                <div class="cart-item__checkbox">
+                    <div class="cart-midle-align">
+                        <input class="cart-item__checkbox-implement" type="checkbox"></div>
                 </div>
+                <div class="cart-item__image">
+                    <a href="http://google.com"></a>
+                    <img class="cart-item__image-description" alt="img_product" src="https://i.postimg.cc/TwY8KjKh/joshua-rondeau-r-AIo-Qyg-EGyw-unsplash-2.jpg">
                 </div>
+                <div class="cart-item__product-info">
+                    <h3 class="cart-item__product-name">Áo chuông tay phòng</h3>
+                    <div class="cart-item__product-detail">
+                        <div class="cart-item__product  span-size-s"> <span class="cart-item__product-name">Size S</span> </div>
+                        <div class="cart-item__product"> <span class="cart-item__product-name">270,000</span> </div>
+                        <div class="cart-item__product">
+                            <div class="cart-item__quantity-drop-down">
+                                <input type="button" value="-" class="cart-item__quantity-btn"  onClick="minus(this)">    
+                                <input class="cart-item__quantity-text "  type="text" value="1">
+                                <input value="+" type="button" class="cart-item__quantity-btn" onClick="plus(this)" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="cart-item__total-price"><span class="cart-item__total-price-name">27,000 </span></div>
+                <div class="cart-item-cancel">
+                    <input type="button"  onClick="hidenItem(this)"  width="14" height="14" aria-label="remove I'm a Product from the cart" class="cart-btn-cancel" value=" &#x2715">
+               
+                </div>
+            </div>
+ -->
+
+              <!-- Item-->
+
+             <!-- Item-->
+             <!-- <div class="cart-item">
+                <div class="cart-item__checkbox">
+                    <div class="cart-midle-align">
+                        <input class="cart-item__checkbox-implement" type="checkbox"></div>
+                </div>
+                <div class="cart-item__image">
+                    <a href="http://google.com"></a>
+                    <img class="cart-item__image-description" alt="img_product" src="https://i.postimg.cc/TwY8KjKh/joshua-rondeau-r-AIo-Qyg-EGyw-unsplash-2.jpg">
+                </div>
+                <div class="cart-item__product-info">
+                    <h3 class="cart-item__product-name">Áo chuông tay phòng</h3>
+                    <div class="cart-item__product-detail">
+                        <div class="cart-item__product  span-size-s"> <span class="cart-item__product-name">Size S</span> </div>
+                        <div class="cart-item__product"> <span class="cart-item__product-name">270,000</span> </div>
+                        <div class="cart-item__product">
+                            <div class="cart-item__quantity-drop-down">
+                                <input type="button" value="-" class="cart-item__quantity-btn"  onClick="minus(this)">    
+                                <input class="cart-item__quantity-text "  type="text" value="1">
+                                <input value="+" type="button" class="cart-item__quantity-btn" onClick="plus(this)" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="cart-item__total-price"><span class="cart-item__total-price-name">27,000 </span></div>
+                <div class="cart-item-cancel">
+                    <input type="button"  onClick="hidenItem(this)"  width="14" height="14" aria-label="remove I'm a Product from the cart" class="cart-btn-cancel" value=" &#x2715">
+               
+                </div>
+            </div> -->
+
+<!-- Item-->
+              <!-- Item-->
+              <!-- <div class="cart-item">
+                <div class="cart-item__checkbox">
+                    <div class="cart-midle-align">
+                        <input class="cart-item__checkbox-implement" type="checkbox"></div>
+                </div>
+                <div class="cart-item__image">
+                    <a href="http://google.com"></a>
+                    <img class="cart-item__image-description" alt="img_product" src="https://i.postimg.cc/TwY8KjKh/joshua-rondeau-r-AIo-Qyg-EGyw-unsplash-2.jpg">
+                </div>
+                <div class="cart-item__product-info">
+                    <h3 class="cart-item__product-name">Áo chuông tay phòng</h3>
+                    <div class="cart-item__product-detail">
+                        <div class="cart-item__product  span-size-s"> <span class="cart-item__product-name">Size S</span> </div>
+                        <div class="cart-item__product"> <span class="cart-item__product-name">270,000</span> </div>
+                        <div class="cart-item__product">
+                            <div class="cart-item__quantity-drop-down">
+                                <input type="button" value="-" class="cart-item__quantity-btn"  onClick="minus(this)">    
+                                <input class="cart-item__quantity-text "  type="text" value="1">
+                                <input value="+" type="button" class="cart-item__quantity-btn" onClick="plus(this)" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="cart-item__total-price"><span class="cart-item__total-price-name">27,000 </span></div>
+                <div class="cart-item-cancel">
+                    <input type="button"  onClick="hidenItem(this)"  width="14" height="14" aria-label="remove I'm a Product from the cart" class="cart-btn-cancel" value=" &#x2715">
+               
+                </div>
+            </div> -->
+
+            <!-- End item-->
+            </div>
+        </div>
+        <script>
+             var CartProducts={
+            imagesrc:['https://scontent.fsgn2-1.fna.fbcdn.net/v/t1.0-9/125256595_2915257018798541_531258921317813496_o.jpg?_nc_cat=105&ccb=2&_nc_sid=730e14&_nc_ohc=QasoEwPX3IgAX890tM-&_nc_ht=scontent.fsgn2-1.fna&oh=8914db77c9f54c95c00f72e7d23356d4&oe=5FD9E88E',
+   'https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.0-9/125799245_2915257035465206_2869890621293014093_o.jpg?_nc_cat=104&ccb=2&_nc_sid=730e14&_nc_ohc=wAkgEcTjI8IAX947PYS&_nc_ht=scontent.fsgn2-5.fna&oh=4cf09601779223592937a0a533e9d868&oe=5FD92FB8',
+   'https://scontent.fsgn2-6.fna.fbcdn.net/v/t1.0-9/125405785_2915257082131868_2197928885692539192_o.jpg?_nc_cat=100&ccb=2&_nc_sid=730e14&_nc_ohc=8Ij65gFPxs8AX9MWMcg&_nc_ht=scontent.fsgn2-6.fna&oh=6a57422f15cf63508213407f4e246520&oe=5FD8E1F1'],
+
+            name:['áo màu vàng','áo màu xanh', 'áo màu đỏ' ],
+            size:['S','X','L'],
+            quantity:[1,2,3],
+            price:[20000,30000,40000]
+        }
+        
+            var listofproduct=[{imagesrc:'https://scontent.fsgn2-1.fna.fbcdn.net/v/t1.0-9/125256595_2915257018798541_531258921317813496_o.jpg?_nc_cat=105&ccb=2&_nc_sid=730e14&_nc_ohc=QasoEwPX3IgAX890tM-&_nc_ht=scontent.fsgn2-1.fna&oh=8914db77c9f54c95c00f72e7d23356d4&oe=5FD9E88E',
+
+            name:'áo màu vàng',
+            size:'S',
+            quantity:1,
+            price:20000},{imagesrc:
+   'https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.0-9/125799245_2915257035465206_2869890621293014093_o.jpg?_nc_cat=104&ccb=2&_nc_sid=730e14&_nc_ohc=wAkgEcTjI8IAX947PYS&_nc_ht=scontent.fsgn2-5.fna&oh=4cf09601779223592937a0a533e9d868&oe=5FD92FB8',
+
+            name:'áo màu xanh', 
+            size:'X',
+            quantity:2,
+            price:30000},{
+                imagesrc:
+   'https://scontent.fsgn2-6.fna.fbcdn.net/v/t1.0-9/125405785_2915257082131868_2197928885692539192_o.jpg?_nc_cat=100&ccb=2&_nc_sid=730e14&_nc_ohc=8Ij65gFPxs8AX9MWMcg&_nc_ht=scontent.fsgn2-6.fna&oh=6a57422f15cf63508213407f4e246520&oe=5FD8E1F1',
+
+            name: 'áo màu đỏ' ,
+            size:'L',
+            quantity:3,
+            price:40000
+            }]
+            function loadproduct(listofproduct){
+                var i;length
+                var n= listofproduct.length;
                 
-      
+                for(i=0;i<n;i++)
+                {
+                var div1= document.createElement("div");
+                div1.setAttribute("class","cart-item");
 
-                <!--  -->
+              
+                var div2=document.createElement("div");
+                div2.setAttribute("class","cart-container__selection");
+                
+                div1.appendChild(div2);
 
-          
+                var div3=document.createElement("div");
+                div3.setAttribute("class","cart-midle-align");
+
+                div2.appendChild(div3);
+
+                var input1= document.createElement("input");
+                input1.setAttribute("class","cart-item__checkbox-implement");
+                input1.setAttribute("type","checkbox");
+
+                div3.appendChild(input1);
+
+                
+                var divImage= document.createElement("div");
+                divImage.setAttribute("class","cart-item__image");
+
+                div1.appendChild(div3);
+
+                var aImage=document.createElement("a");
+                aImage.setAttribute("href","#");
+                divImage.appendChild(aImage);
+
+               
+
+                var image= document.createElement("img");
+                image.setAttribute("class","cart-item__image-description");
+                image.setAttribute("alt","img_product");
+                image.setAttribute("src",String(listofproduct[i].imagesrc));
+
+                divImage.appendChild(image);
+                div1.appendChild(divImage)
+               
+
+                
+             
+                var divProductInfo=document.createElement("div");
+                divProductInfo.setAttribute("class","cart-item__product-info");
+
+                div1.appendChild(divProductInfo);
+
+                var h3=document.createElement("h3");
+                h3.setAttribute("class","cart-item__product-name");
+                var h3dis=document.createTextNode(String(listofproduct[i].name));
+                h3.appendChild(h3dis);
+
+                divProductInfo.appendChild(h3);
+
+                var divProductdetail =document.createElement("div");
+                divProductdetail.setAttribute("class","cart-item__product  span-size-s");
+                divProductInfo.appendChild(divProductdetail);
+
+            
+                var span1= document.createElement("span");
+                span1.setAttribute("class","cart-item__product-name");
+                var span1dis=document.createTextNode("size" +String(listofproduct[i].size));
+                span1.appendChild(span1dis);
+                divProductInfo.appendChild(span1);
+
+                var div5=document.createElement("div");
+                div5.setAttribute("class","cart-item__product");
+                divProductdetail.appendChild(div5);
+                var span2=document.createElement("span");
+                span2.setAttribute("class","cart-item__product-name");
+                var span2dis=document.createTextNode(String(listofproduct[i].price));
+                span2.appendChild(span2dis);
+
+                div5.appendChild(span2);
+
+                var div6=document.createElement("div");
+                div6.setAttribute("class","cart-item__product");
+
+                divProductdetail.appendChild(div6);
+
+                var div61=document.createElement("div")
+                div61.setAttribute("class","cart-item__quantity-drop-down");
+                 div6.appendChild(div61);
+
+                var input61=document.createElement("input");
+                input61.setAttribute("type","button");
+                input61.setAttribute("class","cart-item__quantity-btn");
+                input61.setAttribute("onClick","minus(this);");
+                input61.setAttribute("value","-");
+
+                div61.appendChild(input61);
+
+                var input62=document.createElement("input");
+                input62.setAttribute("type","text");
+                input62.setAttribute("class","cart-item__quantity-text");
+                input62.setAttribute("value","1");
+
+                div61.appendChild(input62);
+
+                var input63=document.createElement("input");
+                input63.setAttribute("type","button");
+                input63.setAttribute("class","cart-item__quantity-btn");
+                input63.setAttribute("onClick","plus(this);");
+                input63.setAttribute("value","+");
+
+                div61.appendChild(input63);
+
+
+
+                var divtotal=document.createElement("div");
+                divtotal.setAttribute("class","cart-item__total-price-name");
+                div1.appendChild(divtotal);
+                
+                var totalspan=document.createElement("span");
+                totalspan.setAttribute("class","cart-item__total-price-name")
+                var totalspandis=document.createTextNode("270000");
+                 totalspan.appendChild(totalspandis);
+                divtotal.appendChild(totalspan);
+
+
+
+
+                var divcancel = document.createElement("div");
+                divcancel.setAttribute("class","cart-item-cancel");
+
+                div1.appendChild(divcancel);
+
+                var inputcancel=document.createElement("input");
+                inputcancel.setAttribute("type","button");
+                inputcancel.setAttribute("onClick","hidenItem(this);");
+                inputcancel.setAttribute("class","cart-btn-cancel");
+                inputcancel.setAttribute("value","X");
+
+                divcancel.appendChild(inputcancel);
+
+                    var parent= document.getElementById("items");
+                    parent.appendChild(div1);
+
+                }   
+                
+            }
+
+
+        </script>
+
+        <div class="cart-commit-payment">
+
+            <div class="cart-header">
+                <h3 class="cart-header-name">Order sumary</h3>
+            </div>
+            <div class="cart-sumary-detail">
+                <div class="cart-paymet-subrotal">
+                    <dt class="cart-dt-subrotal">Subtotal</dt>
+                    <dd class="cart-dd-subrotal">270,000</dd>
+                </div>
+                <div class="cart-paymet-subrotal">
+
+                    <dt class="cart-dt-subrotal cart-dt-shipping ">Shipping
+                        <br>
+                        <label class="cart-label-shipping"> <a class="cart-a-locaion" href="http://google.com"> VietNam</a></label>
+                    </dt>
+
+
+                    <dd class="cart-dd-subrotal">FREE</dd>
+                </div>
+                <div class="cart-paymet-subrotal">
+                    <dt class="cart-dt-subrotal">Total</dt>
+                    <dd class="cart-dd-subrotal">270,000</dd>
                 </div>
             </div>
+            <div class="cart-checkout">
 
-       
-    </div>
-</div>
+                <button class="cart-btn-checkout" onclick="window.location.href='../Payment/Payment.html'">
+                    <span class="pay-content-btn-span">
+                        <svg viewBox="0 0 11 14" fill="currentColor" width="11" height="14"><g id="Page-1" stroke="none" fill="none" stroke-width="1" fill-rule="evenodd">
+                            <g id="Group" fill="currentColor">
+                                <path d="M0,12.7905281 C0,13.348044 0.444836974,13.8 0.995577499,13.8 L10.0044225,13.8 C10.5542648,13.8 11,13.3515084 11,12.7905281 L11,6.00947189 C11,5.45195596 10.555163,5 10.0044225,5 L0.995577499,5 C0.445735229,5 0,5.44849157 0,6.00947189 L0,12.7905281 Z" id="Stroke-1"></path>
+                                <path d="M9.5,5 L9.5,4.07597662 C9.5,2.08610548 7.69574843,0.5 5.5,0.5 C3.30425157,0.5 1.5,2.08610548 1.5,4.07597662 L1.5,5 L2.5,5 L2.5,4.07597662 C2.5,2.66911962 3.82991528,1.5 5.5,1.5 C7.17008472,1.5 8.5,2.66911962 8.5,4.07597662 L8.5,5 L9.5,5 Z" id="Stroke-3" fill-rule="nonzero"></path>
+                            </g>
+                       </g>
+                        </svg>
+                       
+                      Checkout
+                    </span>
+                </button></div>
+        </div>
 
-<!--Sa footer-->
-<footer>
-    <div class="footer-nav">
-        <div class="subscribe-form">
-            <h1>Keep in Touch</h1>
-            <p>Subscribe for the latest news.</p>
-            <form submit="Subscribe">
-                <input type="email" class="email-subsribe" value="" placeholder="Email" required="" pattern="^.+@.+\.[a-zA-Z]{2,63}$" maxlength="250">
-                <button data-testid="buttonElement" class="email-submit"><span class="email-submit-text">Subscribe</span></button>
-            </form>
-        </div>
-        <div class="footer-nav-columns">
-            <div class="footer-menu">
-                <ul>
-                    <li><a href="#">Trang chủ</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-policy">
-                <ul>
-                    <li><a href="#">Phí ship</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-social">
-                <ul>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Instagram</a></li>
-                </ul>
-            </div>
-        </div>
+
     </div>
-    <div class="bottom-info">
-        <p>@2020 by STLV</p>
     </div>
-</footer>
-  </body>
+    </div>
+
+    <footer>
+        <div class="footer-nav">
+            <div class="subscribe-form">
+                <h1>Keep in Touch</h1>
+                <p>Subscribe for the latest news.</p>
+                <form submit="Subscribe">
+                    <input type="email" class="email-subsribe" value="" placeholder="Email" required="" pattern="^.+@.+\.[a-zA-Z]{2,63}$" maxlength="250">
+                    <button data-testid="buttonElement" class="email-submit"><span class="email-submit-text">Subscribe</span></button>
+                </form>
+            </div>
+            <div class="footer-nav-columns">
+                <div class="footer-menu">
+                    <ul>
+                        <li><a href="#">Trang chủ</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-policy">
+                    <ul>
+                        <li><a href="#">Phí ship</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-info">
+            <p>@2020 by STLV</p>
+        </div>
+
+</body>
+
 </html>

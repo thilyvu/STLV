@@ -4,6 +4,22 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+:root{
+    --light-bg: #FFFAE8;
+    --blue: #4A7D85;
+    --green: #4A573E;
+    --red: #822D12;
+    --light-text: #F2EDE6;
+}
+html{
+  font-size: 18px;
+}
+body{
+  font-family: 'Playfair Display', sans-serif;
+  margin:0;
+  padding:0;
+}
+/*login begin*/
 .login{
    
     width: 100%;

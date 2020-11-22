@@ -1,85 +1,68 @@
-:root {
-    --light-bg: #FFFAE8;
-    --blue: #4A7D85;
-    --green: #4A573E;
-    --red: #822D12;
-    --light-text: #F2EDE6;
-  }
-  body {
-    font-family: 'Playfair Display', sans-serif;
-    color: #000;
-    width: 100vr;
-    padding: 0;
-    margin: 0;
-  }
-  /*sa*/
-  header {
-    top: 0;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-  }
-  
-  .site-logo-bar {
-    display: block;
-    background-color: white;
-  }
-  
-  .bar-columns {
-    display: grid;
-    grid-template-columns: 10% 80% 10%;
-  }
-  
-  .site-logo {
-    align-self: center;
-    display: block;
-    justify-self: center;
-    width: 200px;
-  }
-  
-  .login-bar {
-    align-self: center;
-    justify-self: center;
-  }
-  
-  .login-bar a {
-    text-decoration: none;
-    color: black;
-  }
-  
-  .login-bar a:hover {
-    color: var(--blue);
-  }
-  
-  .user-icon {
-    width: 20px;
-  }
-  
-  .menu {
-    background: var(--light-bg);
-    height: 60px;
-    list-style-type: none;
-    text-align: center;
-    font-size: 17px;
-    text-shadow: 0.5px 0.5px 0.5px var(--green);
-  }
-  
-  .menu li {
-    display: inline-block;
-    width: 10%;
-    height: 40px;
-    line-height: 10px;
-    margin-left: -5px;
-    padding: 20px 0 0 0;
-  }
-  
-  .menu a {
-    text-decoration: none;
-    color: var(--green);
-    display: block;
-  }
-  
-  .menu a:hover {
-    color: var(--blue);
-  }
-  /*sa end*/
+:root{
+  --light-bg: #FFFAE8;
+  --blue: #4A7D85;
+  --green: #4A573E;
+  --red: #822D12;
+  --light-text: #F2EDE6;
+}
+html{
+font-size: 18px;
+}
+body{
+font-family: 'Playfair Display', sans-serif;
+margin:0;
+padding:0;
+}
+/*-----header-----*/
+.menu-bar{
+position: absolute;
+background: var(--light-bg);
+display: grid;
+grid-template-columns: 40% 20% 26% 7% 7%;
+width: 90%;
+top: 40px;
+left: 4%;
+right: 4%;
+padding-top: 3px;
+padding-bottom: 3px;
+jutify-self: center;
+align-items: center;
+font-size: 1rem;
+box-shadow: 2px 2px 15px #8F8F8F;
+}
+.menu-bar a{
+text-decoration: none;
+color: var(--green);
+}
+.menu-bar a:hover{
+color: var(--blue);
+}
+.menu ul{
+list-style-type: none;
+}
+.menu li{
+display: inline-block;
+width: 20%;
+}
+.menu li a{
+text-decoration: none;
+color: var(--green);
+}
+.menu li a:hover{
+color: var(--blue);
+}
+.current-page a{
+color: var(--blue);
+}
+.site-logo{
+justify-self: center;
+}
+.site-logo svg{
+width: 50%;
+padding-right: 33%;
+padding-left: 33%;
+}
+.cart svg{
+width: 25%;
+}
+/*-----header end-----*/

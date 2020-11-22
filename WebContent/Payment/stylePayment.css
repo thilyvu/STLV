@@ -24,6 +24,7 @@
 }
 
 .pay-main {
+  padding-top:10%;
   width: 66%;
   margin-left: auto;
   margin-right: auto;
@@ -64,7 +65,7 @@ body {
 
 
 .pay-info {
-  display: block;
+  display: flex;
   text-align: left;
   margin: auto;
   padding: 3.5%;
@@ -80,9 +81,7 @@ body {
 
 .pay-header-selection {
 
-  display: flex;
   padding: 10px;
-  
 
 }
 
@@ -115,25 +114,6 @@ body {
 
 }
 
-.pay-product {
-  width: 50%;
-}
-
-.pay-price {
-  width: 15%;
-
-}
-
-.pay-quantity {
-  width: 15%;
-
-}
-
-.pay-total-price {
-  width: 20%;
-
-}
-
 .product-selected {
   display: flex;
 }
@@ -160,7 +140,7 @@ body {
 /* .pay-item-span-type {
   /* text-align: right;
   align-items: right; */
-/* } */ */
+/* } */ 
 
 .pay-item-voucher {
   display: inline;
@@ -423,7 +403,7 @@ body {
   }
 
  
-  .pay-header-selection{
+  /*== .pay-header-selection{
     /* align-items: stretch; */
     /* display: block; */
   }
@@ -433,7 +413,7 @@ body {
   /* .i-change, .pay-price ,.pay-quantity, .pay-total-price {
     width: auto;
     display: block;
-  } */
+  } */ 
   .pay-product{
     width:70%;
   }
@@ -473,7 +453,7 @@ body {
     padding: 0%;
   }
 
-}
+
 
 /* Sa Footer*/
 :root {
@@ -552,101 +532,142 @@ button:hover {
 
 /* Sa Header Start */
 
-:root {
+:root{
   --light-bg: #FFFAE8;
   --blue: #4A7D85;
   --green: #4A573E;
   --red: #822D12;
   --light-text: #F2EDE6;
 }
-
-html {
-  width: 100vr;
+html{
+font-size: 18px;
 }
-
-body {
-  font-family: 'Playfair Display', sans-serif;
-  color: #000;
-  width: 100vr;
-  padding: 0;
-  margin: 0;
+body{
+font-family: 'Playfair Display', sans-serif;
+margin:0;
+padding:0;
 }
-h1 {
-  font-size: 40px;
+/*-----header-----*/
+.menu-bar{
+position: absolute;
+background: var(--light-bg);
+display: grid;
+grid-template-columns: 40% 20% 25% 8% 7%;
+width: 90%;
+top: 40px;
+left: 4%;
+right: 4%;
+padding-top: 3px;
+padding-bottom: 3px;
+justify-self: center;
+align-items: center;
+font-size: 1rem;
+box-shadow: 2px 2px 15px #8F8F8F;
 }
-
-p {
-  font-size: 16px;
+.menu-bar a{
+text-decoration: none;
+color: var(--green);
 }
-/*Sa header*/
-header {
-  top: 0;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
+.menu-bar a:hover{
+color: var(--blue);
 }
-
-.site-logo-bar {
-  display: block;
-  background-color: white;
+.menu ul{
+list-style-type: none;
 }
-
-.bar-columns {
-  display: grid;
-  grid-template-columns: 10% 80% 10%;
+.menu li{
+display: inline-block;
+width: 20%;
 }
-
-.site-logo {
-  align-self: center;
-  display: block;
-  justify-self: center;
-  width: 200px;
+.menu li a{
+text-decoration: none;
+color: var(--green);
 }
-
-.login-bar {
-  align-self: center;
-  justify-self: center;
+.menu li a:hover{
+color: var(--blue);
 }
-
-.login-bar a {
-  text-decoration: none;
-  color: black;
+.current-page a{
+color: var(--blue);
 }
-
-.login-bar a:hover {
-  color: var(--blue);
+.site-logo{
+justify-self: center;
 }
-
-.user-icon {
-  width: 20px;
+.site-logo svg{
+width: 50%;
+padding-right: 33%;
+padding-left: 33%;
 }
-
-.menu {
-  background: var(--light-bg);
-  height: 60px;
-  list-style-type: none;
-  text-align: center;
-  font-size: 17px;
-  text-shadow: 0.5px 0.5px 0.5px var(--green);
+.cart svg{
+width: 25%;
 }
-
-.menu li {
-  display: inline-block;
-  width: 10%;
-  height: 40px;
-  line-height: 10px;
-  margin-left: -5px;
-  padding: 20px 0 0 0;
-}
-
-.menu a {
-  text-decoration: none;
-  color: var(--green);
-  display: block;
-}
-
-.menu a:hover {
-  color: var(--blue);
-}
+/*-----header end-----*/
 /*Sa header end*/
 /* Sa Header End*/
+
+/* Thảo change location-start*/
+.pay-change-info{
+  width:100%;
+  height:100%;
+  background-color:black;
+  opacity:0.9;
+  position:absolute;
+  top:0.03;
+  position:absolute;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  display: none;
+}
+
+.container-location{
+  width:45%;
+  height:45%;
+  background-color:white;
+  position: relative;
+  margin: 15px auto;
+  font-size: large;
+  border-radius: 2.5%;
+  outline: auto;
+  outline-style: round;
+
+ 
+}
+.pop-close{
+    cursor: pointer;
+      position: absolute;
+      top: 2.5%;
+      right: 2.5%;
+      font-size: 35px;
+      font-weight: bold;
+      transform: rotate(45deg);
+}
+.pop-info{
+   
+    width: 50% ;
+    font-size: 18px;
+    margin: 5% auto;
+    display: block;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.pop-lb{
+margin: 5% ;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+}
+.pop-submit-btn{
+  text-align: center;
+  display: block;
+  margin: 4% auto;
+  width: 35%;
+  height: 45px;
+  color: var(--light-bg);
+  background-color: var(--red);
+  outline: auto;
+  outline-style: round;
+  outline-color: var(--light-bg);
+}
+
+/* Thảo change location-start*/
